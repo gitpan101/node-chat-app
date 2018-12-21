@@ -13,7 +13,7 @@ class Users {
         var userIndex = this.users.findIndex(user => user.id === id);
         var deletedUser = this.users.find(user => user.id === id);
         
-        if(userIndex > 0){
+        if(userIndex > -1){
             this.users.splice(userIndex, 1);
         }
         
