@@ -1,6 +1,7 @@
 const path = require('path');
 const http = require('http');
 const express = require('express');
+const _ = require('lodash');
 const socketIO = require('socket.io');
 
 const {generateMessage, generateLocationMessage} = require('./utils/message');
@@ -19,8 +20,10 @@ app.use(express.static(publicPath));
 io.on('connection', (socket) => {
     console.log('New user connected');
 
+    socket.on('getAvailableRooms', (callback) => callback( _.sortedUniq(users.getRoomList()) ));
+
     socket.on('join', (params, callback) => {
-        if(!isRealString(params.name) || !isRealString(params.room)){
+        if(!isRealString(params.name) || !isRealString(params.room)) {
             return callback('Name and room name are required.');
         }
 

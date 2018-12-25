@@ -78,6 +78,17 @@
     border: 1px solid #e1e1e1;
     padding: 10px;
   }
+
+  .form-field #dropdownMenuButton {
+    width: 100%;
+    text-align: left;
+  }
+
+  .form-field .dropdown-toggle::after {
+    position: absolute;
+    left: 90%;
+    top: 45%;
+  }
   
   .chat {
     display: flex;

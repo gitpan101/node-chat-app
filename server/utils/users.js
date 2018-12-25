@@ -27,6 +27,10 @@ class Users {
     getUserList (room) {
         return this.users.filter(user => user.room === room).map(user => user.name);
     }
+
+    getRoomList () {
+        return this.users.filter(user => user.room !== 'public').map(user => user.room);
+    }
 }
 
 module.exports = {Users};

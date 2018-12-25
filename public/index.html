@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Join | ChatApp by Ashutosh Pandey</title>
 
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css">    
 </head>
 <body class="centered-form">
     <div class="centered-form__form">
@@ -23,9 +24,24 @@
                 <input type="text" name="room" autocomplete="off" />
             </div>
             <div class="form-field">
+                <label>Available rooms</label>
+                <div class="dropdown">
+                    <a class="btn btn-info dropdown-toggle" href="#" id="dropdownMenuButton" 
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Select Room</a>
+                    <div id="ddlRooms" class="dropdown-menu" aria-labelledby="dropdownMenuButton"></div>
+                </div>
+            </div>
+            <div class="form-field">
                 <button>Join</button>
             </div>
         </form>
     </div>
+
+    <script src="/socket.io/socket.io.js"></script>    
+    <script src="./js/libs/jquery-3.3.1.min.js"></script>
+    <script src="./js/libs/popper.min.js"></script>
+    <script src="./js/libs/bootstrap.min.js"></script>    
+    <script src="./js/index.js"></script>
 </body>
 </html>

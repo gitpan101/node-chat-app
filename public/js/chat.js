@@ -20,6 +20,10 @@ function scrollToBottom() {
 socket.on('connect', function() {
     var params = $.deparam(window.location.search);
 
+    if (params.room) {
+        params.room = params.room.toLowerCase();
+    }
+
     socket.emit('join', params, function(err) {
         if(err) {
             alert(err);
@@ -99,5 +103,5 @@ locationButton.on('click', function() {
     }, function() {
         locationButton.removeAttr('disabled').text('Send location');
         alert('Unable to fetch your location!');
-    })
-})
+    });
+});
